@@ -1,0 +1,26 @@
+<launch>
+    <!-- Arguments -->
+    <arg name="robot_description" default="robot_description"/>
+    
+    <!-- Load universal robot description -->
+    <param name="$(arg robot_description)" command="xacro '$(find Robot_5Dof_urdf)/urdf/Robot_5Dof_urdf.urdf.xacro'"/>
+
+    <!-- load the semantic description of the robot in the SRDF file -->
+    <param name="$(arg robot_description)_semantic" command="xacro '$(find Robot_5Dof_config)/config/Robot_5Dof_urdf.srdf.xacro'"/>
+
+    <!-- Load updated joint limits (override information from URDF) -->
+    <group ns="$(arg robot_description)_planning">
+        <rosparam command="load" file="$(find Robot_5Dof_config)/config/joint_limits.yaml" subst_value="true" />
+        <rosparam command="load" file="$(find Robot_5Dof_config)/config/cartesian_limits.yaml" subst_value="true"/>
+    </group>
+
+    <!-- Load default settings for kinematics; these settings are overridden by settings in a node's namespace -->
+    <group ns="$(arg robot_description)_kinematics">
+        <rosparam command="load" file="$(find Robot_5Dof_config)/config/kinematics.yaml" subst_value="true"/>
+    </group>
+
+    <!-- Load the node to get the robot state -->
+    <node pkg="Robot_5Dof_config" type="robot_5dof_robot_state" name="robot_5dof_robot_state" respawn="false" output="screen">
+        <rosparam file="$(find Robot_5Dof_config)/config/kinematics.yaml" command="load"/>
+    </node>
+</launch>

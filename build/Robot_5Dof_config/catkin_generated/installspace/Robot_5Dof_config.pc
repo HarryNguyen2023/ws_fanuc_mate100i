@@ -1,0 +1,8 @@
+prefix=/home/cacha/robot_5dof_ws/install
+
+Name: Robot_5Dof_config
+Description: Description of Robot_5Dof_config
+Version: 0.3.0
+Cflags: -I/usr/include/eigen3
+Libs: -L${prefix}/lib 
+Requires: moveit_core moveit_visual_tools moveit_ros_planning_interface moveit_ros_move_group tf2_geometry_msgs

@@ -1,0 +1,1 @@
+/home/cacha/robot_5dof_ws/devel/.private/Robot_5Dof_config/lib/pkgconfig/Robot_5Dof_config.pc

@@ -1,0 +1,5 @@
+<launch>
+
+    <node pkg="Robot_5Dof_config" type="robot_path_planning" name="path_planning_5dof" output="screen"/>
+
+</launch>

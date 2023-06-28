@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- Define the ros_control plugin in Gazebo -->
+    <gazebo>
+        <plugin name="control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/</robotNamespace>
+        </plugin>
+    </gazebo>
+
+    <!-- Add colission tag for moveable link in Gazebo -->
+    <gazebo reference="arm1_link">
+        <selfCollide>true</selfCollide>
+    </gazebo>
+
+    <gazebo reference="arm2_link">
+        <selfCollide>true</selfCollide>
+    </gazebo>
+
+    <gazebo reference="arm3_link">
+        <selfCollide>true</selfCollide>
+    </gazebo>
+
+    <gazebo reference="arm4_link">
+        <selfCollide>true</selfCollide>
+    </gazebo>
+
+    <gazebo reference="arm5_link">
+        <selfCollide>true</selfCollide>
+    </gazebo>
+
+    
+</robot>

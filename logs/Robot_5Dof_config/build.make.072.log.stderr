@@ -1,0 +1,16 @@
+[01m[K/home/cacha/robot_5dof_ws/src/Robot_5Dof_config/src/robot_5dof_path_planning.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/cacha/robot_5dof_ws/src/Robot_5Dof_config/src/robot_5dof_path_planning.cpp:126:40:[m[K [01;31m[Kerror: [m[Kredeclaration of ‘[01m[Kmoveit::core::RobotState start_state[m[K’
+     robot_state::RobotState start_state[01;31m[K([m[K*move_grp.getCurrentState());
+                                        [01;31m[K^[m[K
+[01m[K/home/cacha/robot_5dof_ws/src/Robot_5Dof_config/src/robot_5dof_path_planning.cpp:75:29:[m[K [01;36m[Knote: [m[K‘[01m[Kmoveit::core::RobotState start_state[m[K’ previously declared here
+     robot_state::RobotState [01;36m[Kstart_state[m[K(*move_grp.getCurrentState());
+                             [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/home/cacha/robot_5dof_ws/src/Robot_5Dof_config/src/robot_5dof_path_planning.cpp:127:10:[m[K [01;31m[Kerror: [m[Kredeclaration of ‘[01m[Kbool found_ik[m[K’
+     bool [01;31m[Kfound_ik[m[K = start_state.setFromIK(joint_model_group, target_pose1);
+          [01;31m[K^~~~~~~~[m[K
+[01m[K/home/cacha/robot_5dof_ws/src/Robot_5Dof_config/src/robot_5dof_path_planning.cpp:78:10:[m[K [01;36m[Knote: [m[K‘[01m[Kbool found_ik[m[K’ previously declared here
+     bool [01;36m[Kfound_ik[m[K = start_state.setFromIK(joint_model_group, target_pose1, timeout);
+          [01;36m[K^~~~~~~~[m[K
+make[2]: *** [CMakeFiles/robot_path_planning.dir/src/robot_5dof_path_planning.cpp.o] Error 1
+make[1]: *** [CMakeFiles/robot_path_planning.dir/all] Error 2
+make: *** [all] Error 2

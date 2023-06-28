@@ -1,0 +1,7 @@
+[01m[K/home/cacha/robot_5dof_ws/src/Robot_5Dof_config/src/robot_5dof_path_planning.cpp:3:10:[m[K [01;31m[Kfatal error: [m[Kmoveit/move_group_interface/move_group_interface.h: No such file or directory
+ #include [01;31m[K<moveit/move_group_interface/move_group_interface.h>[m[K
+          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+make[2]: *** [CMakeFiles/robot_path_planning.dir/src/robot_5dof_path_planning.cpp.o] Error 1
+make[1]: *** [CMakeFiles/robot_path_planning.dir/all] Error 2
+make: *** [all] Error 2

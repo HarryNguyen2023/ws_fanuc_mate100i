@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- Define the transmission tag for joint 1 -->
+    <transmission name="arm1_link_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="arm1_joint">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="arm1_link_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <!-- Define the transmission tag for joint 2 -->
+    <transmission name="arm2_link_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="arm2_joint">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="arm2_link_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <!-- Define the transmission tag for joint 3 -->
+    <transmission name="arm3_link_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="arm3_joint">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="arm3_link_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <!-- Define the transmission tag for joint 4 -->
+    <transmission name="arm4_link_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="arm4_joint">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="arm4_link_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <!-- Define the transmission tag for joint 5 -->
+    <transmission name="arm5_link_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="arm5_joint">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="arm5_link_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    
+</robot>

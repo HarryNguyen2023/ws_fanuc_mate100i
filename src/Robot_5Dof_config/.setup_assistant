@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: Robot_5Dof_urdf
+    relative_path: urdf/Robot_5Dof_urdf.urdf.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/Robot_5Dof_urdf.srdf
+  CONFIG:
+    author_name: Harry Nguyen
+    author_email: harry.nguyen@emagegroup.com
+    generated_timestamp: 1687750294
