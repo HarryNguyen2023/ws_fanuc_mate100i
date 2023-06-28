@@ -45,6 +45,9 @@ target_link_libraries(robot_path_planning ${catkin_LIBRARIES} ${Boost_LIBRARIES}
 add_executable(robot_5dof_robot_state src/robot_5dof_robot_state.cpp)
 target_link_libraries(robot_5dof_robot_state ${catkin_LIBRARIES} ${Boost_LIBRARIES})
 
+add_executable(robot_5dof_planning_scene src/robot_5dof_planning_scene.cpp)
+target_link_libraries(robot_5dof_planning_scene ${catkin_LIBRARIES} ${Boost_LIBRARIES})
+
 install(DIRECTORY launch DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
   PATTERN "setup_assistant.launch" EXCLUDE)
 install(DIRECTORY config DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})

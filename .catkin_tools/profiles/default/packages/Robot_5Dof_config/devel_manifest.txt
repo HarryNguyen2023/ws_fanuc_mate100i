@@ -5,3 +5,4 @@ Robot_5Dof_config
 /home/cacha/robot_5dof_ws/devel/.private/Robot_5Dof_config/lib/pkgconfig/Robot_5Dof_config.pc /home/cacha/robot_5dof_ws/devel/lib/pkgconfig/Robot_5Dof_config.pc
 /home/cacha/robot_5dof_ws/devel/.private/Robot_5Dof_config/lib/Robot_5Dof_config/robot_path_planning /home/cacha/robot_5dof_ws/devel/lib/Robot_5Dof_config/robot_path_planning
 /home/cacha/robot_5dof_ws/devel/.private/Robot_5Dof_config/lib/Robot_5Dof_config/robot_5dof_robot_state /home/cacha/robot_5dof_ws/devel/lib/Robot_5Dof_config/robot_5dof_robot_state
+/home/cacha/robot_5dof_ws/devel/.private/Robot_5Dof_config/lib/Robot_5Dof_config/robot_5dof_planning_scene /home/cacha/robot_5dof_ws/devel/lib/Robot_5Dof_config/robot_5dof_planning_scene

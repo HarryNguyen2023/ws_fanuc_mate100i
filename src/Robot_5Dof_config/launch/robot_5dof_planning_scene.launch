@@ -1,0 +1,4 @@
+<launch>
+    <!-- Run the planning scene node -->
+    <node pkg="Robot_5Dof_config" type="robot_5dof_planning_scene" name="robot_5dof_planning_scene" respawn="false" output="screen"/>
+</launch>

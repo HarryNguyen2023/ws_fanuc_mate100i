@@ -1,3 +1,0 @@
-[ 50%] [32mBuilding CXX object CMakeFiles/robot_path_planning.dir/src/robot_5dof_path_planning.cpp.o[0m
-[100%] [32m[1mLinking CXX executable /home/cacha/robot_5dof_ws/devel/.private/Robot_5Dof_config/lib/Robot_5Dof_config/robot_path_planning[0m
-[100%] Built target robot_path_planning

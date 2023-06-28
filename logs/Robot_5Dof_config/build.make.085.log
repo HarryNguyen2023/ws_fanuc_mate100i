@@ -1,0 +1,5 @@
+[ 33%] Built target robot_5dof_robot_state
+[ 50%] [32mBuilding CXX object CMakeFiles/robot_5dof_planning_scene.dir/src/robot_5dof_planning_scene.cpp.o[0m
+[ 83%] Built target robot_path_planning
+[100%] [32m[1mLinking CXX executable /home/cacha/robot_5dof_ws/devel/.private/Robot_5Dof_config/lib/Robot_5Dof_config/robot_5dof_planning_scene[0m
+[100%] Built target robot_5dof_planning_scene
