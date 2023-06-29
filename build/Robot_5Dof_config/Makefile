@@ -653,6 +653,19 @@ run_tests/fast:
 .PHONY : run_tests/fast
 
 #=============================================================================
+# Target rules for targets named robot_5dof_motion_planner
+
+# Build rule for target.
+robot_5dof_motion_planner: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 robot_5dof_motion_planner
+.PHONY : robot_5dof_motion_planner
+
+# fast build rule for target.
+robot_5dof_motion_planner/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robot_5dof_motion_planner.dir/build.make CMakeFiles/robot_5dof_motion_planner.dir/build
+.PHONY : robot_5dof_motion_planner/fast
+
+#=============================================================================
 # Target rules for targets named actionlib_msgs_generate_messages_nodejs
 
 # Build rule for target.
@@ -1666,6 +1679,30 @@ gtest/fast:
 	$(MAKE) $(MAKESILENT) -f gtest/googlemock/gtest/CMakeFiles/gtest.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
 
+src/robot_5dof_motion_planner.o: src/robot_5dof_motion_planner.cpp.o
+.PHONY : src/robot_5dof_motion_planner.o
+
+# target to build an object file
+src/robot_5dof_motion_planner.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robot_5dof_motion_planner.dir/build.make CMakeFiles/robot_5dof_motion_planner.dir/src/robot_5dof_motion_planner.cpp.o
+.PHONY : src/robot_5dof_motion_planner.cpp.o
+
+src/robot_5dof_motion_planner.i: src/robot_5dof_motion_planner.cpp.i
+.PHONY : src/robot_5dof_motion_planner.i
+
+# target to preprocess a source file
+src/robot_5dof_motion_planner.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robot_5dof_motion_planner.dir/build.make CMakeFiles/robot_5dof_motion_planner.dir/src/robot_5dof_motion_planner.cpp.i
+.PHONY : src/robot_5dof_motion_planner.cpp.i
+
+src/robot_5dof_motion_planner.s: src/robot_5dof_motion_planner.cpp.s
+.PHONY : src/robot_5dof_motion_planner.s
+
+# target to generate assembly for a file
+src/robot_5dof_motion_planner.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/robot_5dof_motion_planner.dir/build.make CMakeFiles/robot_5dof_motion_planner.dir/src/robot_5dof_motion_planner.cpp.s
+.PHONY : src/robot_5dof_motion_planner.cpp.s
+
 src/robot_5dof_path_planning.o: src/robot_5dof_path_planning.cpp.o
 .PHONY : src/robot_5dof_path_planning.o
 
@@ -1863,9 +1900,13 @@ help:
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... robot_5dof_motion_planner"
 	@echo "... robot_5dof_planning_scene"
 	@echo "... robot_5dof_robot_state"
 	@echo "... robot_path_planning"
+	@echo "... src/robot_5dof_motion_planner.o"
+	@echo "... src/robot_5dof_motion_planner.i"
+	@echo "... src/robot_5dof_motion_planner.s"
 	@echo "... src/robot_5dof_path_planning.o"
 	@echo "... src/robot_5dof_path_planning.i"
 	@echo "... src/robot_5dof_path_planning.s"
