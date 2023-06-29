@@ -5,6 +5,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   pluginlib
+  interactive_markers
   moveit_core
   moveit_visual_tools
   moveit_ros_planning
@@ -28,8 +29,8 @@ catkin_package(
   moveit_core
   moveit_visual_tools
   moveit_ros_planning_interface
-  moveit_ros_move_group
   tf2_geometry_msgs
+  interactive_markers
   DEPENDS
   EIGEN3
 )
@@ -50,6 +51,7 @@ target_link_libraries(robot_5dof_planning_scene ${catkin_LIBRARIES} ${Boost_LIBR
 
 add_executable(robot_5dof_motion_planner src/robot_5dof_motion_planner.cpp)
 target_link_libraries(robot_5dof_motion_planner ${catkin_LIBRARIES} ${Boost_LIBRARIES})
+install(TARGETS robot_5dof_motion_planner DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
 install(DIRECTORY launch DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
   PATTERN "setup_assistant.launch" EXCLUDE)

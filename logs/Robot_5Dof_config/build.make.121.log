@@ -1,0 +1,8 @@
+[35m[1mConsolidate compiler generated dependencies of target robot_path_planning[0m
+[35m[1mConsolidate compiler generated dependencies of target robot_5dof_motion_planner[0m
+[ 25%] Built target robot_5dof_robot_state
+[ 50%] Built target robot_5dof_planning_scene
+[ 75%] Built target robot_5dof_motion_planner
+[ 87%] [32mBuilding CXX object CMakeFiles/robot_path_planning.dir/src/robot_5dof_path_planning.cpp.o[0m
+[100%] [32m[1mLinking CXX executable /home/cacha/robot_5dof_ws/devel/.private/Robot_5Dof_config/lib/Robot_5Dof_config/robot_path_planning[0m
+[100%] Built target robot_path_planning

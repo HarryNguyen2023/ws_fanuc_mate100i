@@ -185,7 +185,7 @@ foreach(t ${Robot_5Dof_config_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "moveit_core;moveit_visual_tools;moveit_ros_planning_interface;moveit_ros_move_group;tf2_geometry_msgs")
+set(depends "moveit_core;moveit_visual_tools;moveit_ros_planning_interface;tf2_geometry_msgs;interactive_markers")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls

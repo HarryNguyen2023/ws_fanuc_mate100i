@@ -1,7 +1,9 @@
 <launch>
+
     <node pkg="Robot_5Dof_config" type="robot_5dof_motion_planner" name="robot_5dof_motion_planner" respawn="false" output="screen">
         <rosparam file="$(find Robot_5Dof_config)/config/kinematics.yaml" command="load"/>
         <param name="/planning_plugin" value="ompl_interface/OMPLPlanner"/>
         <rosparam file="$(find Robot_5Dof_config)/config/ompl_planning.yaml" command="load"/>
     </node>
+    
 </launch>

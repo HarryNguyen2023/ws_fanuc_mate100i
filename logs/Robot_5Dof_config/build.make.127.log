@@ -1,0 +1,5 @@
+[35m[1mConsolidate compiler generated dependencies of target robot_5dof_motion_planner[0m
+[ 25%] Built target robot_5dof_robot_state
+[ 50%] Built target robot_path_planning
+[ 75%] Built target robot_5dof_planning_scene
+[100%] Built target robot_5dof_motion_planner

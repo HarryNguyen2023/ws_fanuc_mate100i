@@ -54,8 +54,14 @@ int main(int argc, char** argv)
     target_pose1.position.x = 0.5;
     target_pose1.position.y = 0.0;
     target_pose1.position.z = 0.48;
+    // target_pose1.orientation.w = 0.707;
+    // target_pose1.position.x = 0.5;
+    // target_pose1.position.y = 0.0;
+    // target_pose1.position.z = 0.48;
     // Set the target to Moveit
-    move_grp.setPoseTarget(target_pose1);
+    //move_grp.setPoseTarget(target_pose1);
+    move_grp.setPoseReferenceFrame("world");
+    move_grp.setApproximateJointValueTarget(target_pose1, "arm5_link");
     // Declare the moveit plan
     moveit::planning_interface::MoveGroupInterface::Plan my_plan;
     // Check if the pose can be planned
@@ -73,20 +79,14 @@ int main(int argc, char** argv)
     
     // Set the new start state for the robot
     robot_state::RobotState start_state(*move_grp.getCurrentState());
-    start_state.printStateInfo();
-    double timeout = 0.1;
-    bool found_ik = start_state.setFromIK(joint_model_group, target_pose1, timeout);
-    
-    ROS_INFO_NAMED("robot_5dof", "IK calculation %s", found_ik ? "SUCCESS":"FAILED");
-    
+    geometry_msgs::Pose start_pose;
+    start_pose = target_pose1;
+    bool found_ik = start_state.setFromIK(joint_model_group, start_pose);
+    ROS_INFO("IK calculation %s", found_ik ? "SUCCESS" : "FAILED");
     move_grp.setStartState(start_state);
-    
 
-    // Create an pointer reference to the current robot state
-    moveit::core::RobotStatePtr current_state = move_grp.getCurrentState();
     // Get the current set of joint value of the robot
     std::vector<double> joint_group_pos(5);
-    current_state->copyJointGroupPositions(joint_model_group, joint_group_pos);
     // Modilfy some joint space values
     joint_group_pos[0] = -2.618;
     joint_group_pos[1] = -1.0472;
@@ -122,27 +122,25 @@ int main(int argc, char** argv)
     // move_grp.setPathConstraints(path_constraint1);
     // ROS_INFO_NAMED("robot_5dof", "Added constraint for the end-effector link");
 
-    // Plan the robot to the new pose state
-    found_ik = start_state.setFromIK(joint_model_group, target_pose1);
-    ROS_INFO_NAMED("robot_5dof","IK calcualtion %s", found_ik ? "SUCCESS" : "FAILED");
-    move_grp.setStartState(start_state);
+    // Plan the robot to the new pose stateS
+    // move_grp.setStartState(*move_grp.getCurrentState());
 
-    geometry_msgs::Pose target_pose2;
-    target_pose2.orientation.w = 1.0;
-    target_pose2.position.x = 0.5;
-    target_pose2.position.y = 0.2;
-    target_pose2.position.z = 0.52;
-    move_grp.setPoseTarget(target_pose2);
+    // geometry_msgs::Pose target_pose2;
+    // target_pose2.orientation.w = 1.0;
+    // target_pose2.position.x = 0.5;
+    // target_pose2.position.y = 0.2;
+    // target_pose2.position.z = 0.52;
+    // move_grp.setPoseTarget(target_pose2);
 
-    move_grp.setPlanningTime(10.0);
-    // Plan the path
-    success = (move_grp.plan(my_plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
-    ROS_INFO_NAMED("robot_5dof", "Visualizing plan 3 (path with constraint) %s", success ? "SUCCESS" : "FAILED");
-    ROS_INFO_NAMED("robot_5dof", "Robot is moving on path 3");
-    visual_tools.publishTrajectoryLine(my_plan.trajectory_, joint_model_group);
-    visual_tools.trigger();
-    // Clear the path constraint
-    move_grp.clearPathConstraints();
+    // move_grp.setPlanningTime(10.0);
+    // // Plan the path
+    // success = (move_grp.plan(my_plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
+    // ROS_INFO_NAMED("robot_5dof", "Visualizing plan 3 (path with constraint) %s", success ? "SUCCESS" : "FAILED");
+    // ROS_INFO_NAMED("robot_5dof", "Robot is moving on path 3");
+    // visual_tools.publishTrajectoryLine(my_plan.trajectory_, joint_model_group);
+    // visual_tools.trigger();
+    // // Clear the path constraint
+    // move_grp.clearPathConstraints();
 
     // End the planning
     ros::shutdown();
