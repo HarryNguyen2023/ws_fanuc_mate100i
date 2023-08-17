@@ -1,13 +1,15 @@
 <launch>
     <!-- Launch Your robot arms launch file which loads the robot in Gazebo and spawns the controllers -->
-    <include file = "$(find Robot_5Dof_urdf)/launch/Robot_5Dof.launch" />
+    <include file = "$(find Robot_5Dof_urdf)/launch/five_robot_arm_gazebo.launch">
+        <arg name="use_rviz" value="false"/>   
+    </include>
 
     <!-- Launch Moveit Move Group Node -->
     <include file = "$(find Robot_5Dof_config)/launch/move_group.launch" />
 
     <!-- Run Rviz and load the default configuration to see the state of the move_group node -->
-    <arg name="use_rviz" default="true" />
-    <include file="$(find Robot_5Dof_config)/launch/moveit_rviz.launch" if="$(arg use_rviz)">
+    <arg name="moveit_rviz" default="true" />
+    <include file="$(find Robot_5Dof_config)/launch/moveit_rviz.launch" if="$(arg moveit_rviz)">
         <arg name="rviz_config" value="$(find Robot_5Dof_config)/launch/moveit.rviz"/>
     </include>
 

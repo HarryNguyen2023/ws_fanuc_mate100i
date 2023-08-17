@@ -1,0 +1,33 @@
+<launch>
+    <!-- Default pose for spawning the URDF robot into Gazebo -->
+    <arg name="arg_x" default="0.00" />
+    <arg name="arg_y" default="0.00" />
+    <arg name="arg_z" default="0.00" />
+    <arg name="arg_R" default="0.00" />
+    <arg name="arg_P" default="0.00" />
+    <arg name="arg_Y" default="0.00" />
+
+    <!-- Launch Gazebo empty_world -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="use_sim_time" value="true"/>
+        <arg name="gui" value="true"/>      
+    </include>
+
+    <!-- Load the URDF of the model and the robot state publisher -->
+    <arg name="use_rviz" default="true"/> 
+    <include file="$(find Robot_5Dof_urdf)/launch/five_robot_arm.launch">
+        <arg name="gui" value="false"/>
+        <arg name="rviz" value="$(arg use_rviz)"/>      
+    </include>
+
+    <!-- Spawn the URDF model into Gazebo -->
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" args="-x $(arg arg_x) -y $(arg
+        arg_y) -z $(arg arg_z) -Y $(arg arg_Y) -param robot_description -urdf -model
+        five_robot_arm" />
+
+    <!--Load and launch the joint trajectory controller-->
+    <rosparam file ="$(find Robot_5Dof_urdf)/config/five_robot_arm_controllers.yaml" command="load"/>
+    <node name= "controller_spawner" pkg= "controller_manager" type="spawner" respawn="false"
+        output="screen" args="joint_state_controller robot_arm_controller"/>
+
+</launch>

@@ -3,30 +3,41 @@
 
     <!-- Define the ros_control plugin in Gazebo -->
     <gazebo>
-        <plugin name="control" filename="libgazebo_ros_control.so">
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
             <robotNamespace>/</robotNamespace>
+            <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
         </plugin>
     </gazebo>
 
     <!-- Add colission tag for moveable link in Gazebo -->
     <gazebo reference="arm1_link">
         <selfCollide>true</selfCollide>
+        <material>Gazebo/Blue</material>
+        <gravity>true</gravity>
     </gazebo>
 
     <gazebo reference="arm2_link">
         <selfCollide>true</selfCollide>
+        <material>Gazebo/White</material>
+        <gravity>true</gravity>
     </gazebo>
 
     <gazebo reference="arm3_link">
         <selfCollide>true</selfCollide>
+        <material>Gazebo/Blue</material>
+        <gravity>true</gravity>
     </gazebo>
 
     <gazebo reference="arm4_link">
         <selfCollide>true</selfCollide>
+        <material>Gazebo/White</material>
+        <gravity>true</gravity>
     </gazebo>
 
     <gazebo reference="arm5_link">
         <selfCollide>true</selfCollide>
+        <material>Gazebo/Blue</material>
+        <gravity>true</gravity>
     </gazebo>
 
     

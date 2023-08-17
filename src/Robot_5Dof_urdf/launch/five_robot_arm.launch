@@ -1,0 +1,22 @@
+<launch>
+    <!-- Arguments -->
+    <arg name="gui" default="true"/>
+    <arg name="rviz" default="true"/>
+    
+    <!-- Load the robot URDF -->
+    <arg name="model" value="$(find Robot_5Dof_urdf)/urdf/Robot_5Dof_urdf.urdf.xacro"/> 
+    <param name="robot_description" command="$(find xacro)/xacro $(arg model)"/>
+    
+    <!-- Launch the robot state publisher to publish the dynamic transform between joints -->
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"/>
+
+    <!-- Launch the joint state publisher gui -->
+    <group if="$(arg gui)">
+        <node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="joint_state_publisher_gui" output="screen"/>
+    </group>
+
+    <!-- Launch Rviz -->
+    <group if="$(arg rviz)">
+        <node pkg="rviz" type="rviz" name="rviz" output="screen" args="-d $(find Robot_5Dof_urdf)/rviz/five_robot_arm.rviz" required="true"/>
+    </group> 
+</launch>

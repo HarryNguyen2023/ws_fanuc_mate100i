@@ -2,6 +2,7 @@
 robot_arm_controller:
   type: "position_controllers/JointTrajectoryController"
   joints: [arm1_joint, arm2_joint, arm3_joint, arm4_joint, arm5_joint]
+  pid: {p: 100.0, i: 0.01, d: 10.0}
 
 # Controller to publish the joint_states topic
 joint_state_controller:
